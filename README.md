@@ -2,11 +2,11 @@
 An analysis of US housing prices using Python's pandas library, SQL, Tableau, and linear regression machine learning.
 
 ### The Team
-- Robin Foster(https://github.com/rloufoster)
-- Laura Hemydin(https://github.com/L-Hmd)
-- Kayla Howell(https://github.com/kbowling74)
-- Sam Steffen(https://github.com/SamSteffen)
-- Marty Thompson(https://github.com/martyet1)
+- [Robin Foster](https://github.com/rloufoster)
+- [Laura Hemydin](https://github.com/L-Hmd)
+- [Kayla Howell](https://github.com/kbowling74)
+- [Sam Steffen](https://github.com/SamSteffen)
+- [Marty Thompson](https://github.com/martyet1)
 
 # Overview
 ## What We're Trying To Solve
