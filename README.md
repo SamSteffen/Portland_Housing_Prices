@@ -2,17 +2,15 @@
 An analysis of US housing prices using Python's pandas library, SQL, Tableau, and linear regression machine learning.
 
 ### The Team
-- Robin Foster
-- Laura Hemydin
-- Kayla Howell
-- Sam Steffen
-- Marty Thompson
+- Robin Foster(https://github.com/rloufoster)
+- Laura Hemydin(https://github.com/L-Hmd)
+- Kayla Howell(https://github.com/kbowling74)
+- Sam Steffen(https://github.com/SamSteffen)
+- Marty Thompson(https://github.com/martyet1)
 
 # Overview
 ## What We're Trying To Solve
-With the emergence of COVID-19, the housing market 
-
-This repository documents the creation of a linear regression machine learning model that predicts housing prices based on average city income, average mortgage rates and other factors.
+This repository documents the creation of a linear regression machine learning model that predicts housing prices based on average city income, average mortgage rates and other features.
 
 ## Data Sources
 The data for this project was taken from the following sources:
@@ -22,14 +20,8 @@ The data for this project was taken from the following sources:
 - Massachusettes data:
 
 ### Initial Findings:
-Year    Date_count
-2022	482
-2021	2034
-2020	1583
-2019	2591
-2018	2068
-
-- The Max date for the dataset was listed as 12/1/2022, indicating potential user input error.
+- The initial dataset for this project was found on Kaggle, and was scraped using Python. As a downloaded csv, it contained over 900,000 rows of data from several US states (but not all of them). To hone the focus of our analysis, we reduced the size of our dataset by filtering for data that was collected from the state of Masschussettes, which contained a robust number of rows, and specified our pull to the parameters of the last five years (2018-2022).
+- Upon initial exploratory data analysis, the earliest date in the dataset ("min") was listed as having taken place in 1900, while the "maximum" date for the dataset was listed as 12/1/2022, indicating potential error (as 12/1/2022 has not yet transpired).
 
 ## Strategy and Metrics
 List some goals of your analysis, ideally in the form of testable hypothesis, or via well-defined success metrics. These can be tentative, and you don’t need to stick to them throughout your project. Again, since you haven’t done any exploratory analysis yet, you might assume that the data has structure that it doesn’t, and you might not have seen other interesting patterns in the data. But you should always approach the data with some expectations so that your efforts are focused.
@@ -47,4 +39,4 @@ Data products this project will produce include:
 - Visualizations of housing price, average interest rate, average income over a given time period, within a specified location, available on a shareable storyboard (Tableau Public).
 - Confusion Matrix
 - Accuracy Score
-- Evidence of our discovered insights will be available in this README.
+- Evidence of our discovered insights will be available in the summary section of this README.
