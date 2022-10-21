@@ -21,6 +21,26 @@ An analysis of housing prices in Portland, Oregon using Python's pandas library,
 ## What We're Trying To Solve
 Zillow's 'zestimator' is a well-known and widely-used machine learning algorithm that predicts house price for site-users based on a variety of features. This project is an attempt to create a home price estimator similar to the one used by Zillow, to predict housing prices based on regional median income by zipcode. Below we have documented the creation of a linear regression machine learning model that draws on known sale prices of homes in Portland, Oregon to predict future sale prices based on number of bedrooms, number of bathrooms, lot size, zip code and median income for each zip code.
 
+## Tools
+To analyze and prepare our data for our machine learning model, we plan to use the following tools:
+- **Excel** - Most of our data will be downloaded from an online source in csv format, from which it will be imported to a jupyter notebook for initial cleaning
+- **Python** - Using Python's pandas library, we will create dataframes from our dataset and prepare it for importing to our SQL database.
+- **PostgreSQL** - We will use SQL to merge multiple datasets into a single database.
+- **Tableau** - We will use Tableau Public to create visualizations of cleaned, merged data, taken from our PostgreSQL database. 
+- **GitHub** - GitHub will host our repository.
+
+## Strategy and Metrics
+The goals of this analysis include:
+- Utilize recent housing data to reflect current market trends.
+- Develop a linear regression machine learning model capable of predicting housing sale price (target variable) using number of bedrooms, number of bathrooms, lot size and median household income by zipcode, with an accuracy score of 90% or higher.
+
+## Data Artifacts
+Data products this project will produce include:
+- Visualizations of housing price, average interest rate, average income over a given time period, within a specified location, available on a shareable storyboard (Tableau Public).
+- Confusion Matrix
+- Accuracy score summary reports
+- Evidence of our discovered insights will be available in the summary section of this README.
+
 ## Data Sources
 The data for this project was sourced from the following locations:
 - [Portland house price data (Kaggle.com)](https://www.kaggle.com/datasets/threnjen/portland-housing-prices-sales-jul-2020-jul-2021?select=portland_housing.csv)
@@ -28,6 +48,7 @@ The data for this project was sourced from the following locations:
 - [Portland Census data (census.gov)](https://www.census.gov/quickfacts/fact/table/portlandcityoregon/INC110220#INC110220)
 - [Portland Zip Code data (google.com/maps)](https://www.google.com/maps/@45.5427139,-122.6544011,11z)
 
+# Procedure
 ## Preprocessing and Initial Findings:
 >Dataset 1: Portland Housing Data
 - Our first dataset was downloaded from Kaggle.com, containing information pertaining to the housing market, regional to Portland, Oregon. The initial dimensions included 348 columns and more than 25,000 unique rows of data.
@@ -36,7 +57,7 @@ After pairing the columns down from 348 to 13, we were yielded 21,168 rows of us
 
 ![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/df.jpg](images/df.jpg)
 
-The final features of this cleaned dataset include:
+The final features of this cleaned dataset include:    
     - Address (abbreviated)       
     - City    
     - Zipcode    
@@ -64,22 +85,4 @@ Further exploration of this dataset showed that there were 62 unique zip codes p
 ## Transforming and Loading the Data into the Database (PostgreSQL)
 
 
-## Strategy and Metrics
-The goals of this analysis include:
-- Utilize recent housing data to reflect current market trends.
-- Develop a linear regression machine learning model capable of predicting housing sale price (target variable) using number of bedrooms, number of bathrooms, lot size and median household income by zipcode, with an accuracy score of 90% or higher.
 
-## Tools
-To analyze and prepare our data for our machine learning model, we plan to use the following tools:
-- **Excel** - Most of our data will be downloaded from an online source in csv format, from which it will be imported to a jupyter notebook for initial cleaning
-- **Python** - Using Python's pandas library, we will create dataframes from our dataset and prepare it for importing to our SQL database.
-- **PostgreSQL** - We will use SQL to merge multiple datasets into a single database.
-- **Tableau** - We will use Tableau Public to create visualizations of cleaned, merged data, taken from our PostgreSQL database. 
-- **GitHub** - GitHub will host our repository.
-
-## Data Artifacts
-Data products this project will produce include:
-- Visualizations of housing price, average interest rate, average income over a given time period, within a specified location, available on a shareable storyboard (Tableau Public).
-- Confusion Matrix
-- Accuracy score summary reports
-- Evidence of our discovered insights will be available in the summary section of this README.
