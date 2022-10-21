@@ -37,19 +37,19 @@ After pairing the columns down from 348 to 13, we were yielded 21,168 rows of us
 ![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/df.jpg](images/df.jpg)
 
 The final features of this cleaned dataset include:
-    - Address (abbreviated)
-    - City
-    - Zipcode
-    - Latitude coordinates
-    - Longitude coordinates
-    - Days on Zillow
-    - Date Sold
-    - Price (what the house actually sold for, US dollar amount)
-    - Zestimate (what Zillow predicted the house would sell for, US dollar amount)
-    - Rent Zestimate (what Zillow predicted the house could be rented for, US dollar amount)
-    - Property tax rate
-    - Tax assessed value (what the value is deemed worth according to the taxing authorities)
-    - Tax assessed year
+    - Address (abbreviated)       
+    - City    
+    - Zipcode    
+    - Latitude coordinates    
+    - Longitude coordinates    
+    - Days on Zillow    
+    - Date Sold    
+    - Price (what the house actually sold for, US dollar amount)    
+    - Zestimate (what Zillow predicted the house would sell for, US dollar amount)    
+    - Rent Zestimate (what Zillow predicted the house could be rented for, US dollar amount)    
+    - Property tax rate    
+    - Tax assessed value (what the value is deemed worth according to the taxing authorities)    
+    - Tax assessed year    
 
 Further exploration of this dataset showed that there were 62 unique zip codes present, with value counts ranging from 1 to 1001 per zipcode. To make sure our data was more evenly distributed from the outset, we filtered this data to return only data for zip codes that included more than 500 rows of data. This left us with 17 unique zip codes, and 11,854 rows of data.
 
