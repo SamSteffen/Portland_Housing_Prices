@@ -39,6 +39,14 @@ This repository documents the creation of a linear regression machine learning m
 ## Data Sources
 The primary data for this project was taken from the following two sources:
 - Portland_data: https://www.kaggle.com/datasets/threnjen/portland-housing-prices-sales-jul-2020-jul-2021?select=portland_housing.csv
+
+- National Realtor data: https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset?resource=download
+- Massachusettes data:
+     
+### Initial Findings:
+- The initial dataset for this project was found on Kaggle, and was scraped using Python. As a downloaded csv, it contained over 900,000 rows of data from several US states (but not all of them). To hone the focus of our analysis, we reduced the size of our dataset by filtering for data that was collected from the state of Masschussettes, which contained a robust number of rows, and specified our pull to the parameters of the last five years (2018-2022).
+- Upon initial exploratory data analysis, the earliest date in the dataset ("min") was listed as having taken place in 1900, while the "maximum" date for the dataset was listed as 12/1/2022, indicating potential error (as 12/1/2022 has not yet transpired).
+=======
 - 
 
 ## Preprocessing and Initial Findings:
@@ -75,6 +83,7 @@ Further exploration of this dataset showed that there were 62 unique zip codes p
 [pic of data]
 
 ## Transforming and Loading the Data into the Database (PostgreSQL)
+
 
 
 
