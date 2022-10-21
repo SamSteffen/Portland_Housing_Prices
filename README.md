@@ -22,11 +22,25 @@ An analysis of housing prices in Portland, Oregon using Python's pandas library,
 Zillow's 'zestimator' is a well-known and widely-used machine learning algorithm that predicts house price for site-users based on a variety of features. This project is an attempt to create a home price estimator similar to the one used by Zillow, to predict housing prices based on regional median income by zipcode. Below we have documented the creation of a linear regression machine learning model that draws on known sale prices of homes in Portland, Oregon to predict future sale prices based on number of bedrooms, number of bathrooms, lot size, zip code and median income for each zip code.
 
 ## Data Sources
+<<<<<<< HEAD
 The data for this project was sourced from the following locations:
 - [Portland house price data (Kaggle.com)](https://www.kaggle.com/datasets/threnjen/portland-housing-prices-sales-jul-2020-jul-2021?select=portland_housing.csv)
 - [Income data (zipatlas.com)](http://zipatlas.com/us/or/portland/zip-code-comparison/median-household-income.htm) 
 - [Portland Census data (census.gov)](https://www.census.gov/quickfacts/fact/table/portlandcityoregon/INC110220#INC110220)
 - [Portland Zip Code data (google.com/maps)](https://www.google.com/maps/@45.5427139,-122.6544011,11z)
+=======
+The primary data for this project was taken from the following two sources:
+- Portland_data: https://www.kaggle.com/datasets/threnjen/portland-housing-prices-sales-jul-2020-jul-2021?select=portland_housing.csv
+
+- National Realtor data: https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset?resource=download
+- Massachusettes data:
+     
+### Initial Findings:
+- The initial dataset for this project was found on Kaggle, and was scraped using Python. As a downloaded csv, it contained over 900,000 rows of data from several US states (but not all of them). To hone the focus of our analysis, we reduced the size of our dataset by filtering for data that was collected from the state of Masschussettes, which contained a robust number of rows, and specified our pull to the parameters of the last five years (2018-2022).
+- Upon initial exploratory data analysis, the earliest date in the dataset ("min") was listed as having taken place in 1900, while the "maximum" date for the dataset was listed as 12/1/2022, indicating potential error (as 12/1/2022 has not yet transpired).
+=======
+- 
+>>>>>>> 95416cb63cd6c9dcacd863546efab4719623d55e
 
 ## Preprocessing and Initial Findings:
 >Dataset 1: Portland Housing Data
@@ -61,6 +75,7 @@ Further exploration of this dataset showed that there were 62 unique zip codes p
 [pic of data]
 
 ## Transforming and Loading the Data into the Database (PostgreSQL)
+
 
 
 
