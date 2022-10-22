@@ -1,5 +1,7 @@
 # Adding files to ignore
 config.py
+PortlandMedianIncomebyZip.csv
+Portland_housing_w_rooms_reduced-zips.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
