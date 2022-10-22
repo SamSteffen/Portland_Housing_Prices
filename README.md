@@ -87,7 +87,7 @@ Once the raw data was cleaned, it was exported as a csv and loaded into PostgreS
 
 ![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/Database_schema.png](images/Database_schema.png)
 
-The Once the join was successful, the output was a new table that contained the target variable (housing prices) and the independent variables (number of bedrooms, number of bathrooms, lot size, and median household income). The image below depicts the results of this SQL join query:
+The datasets were merged using a left join to generate a new table that contained the target variable (housing prices) and the independent variables (number of bedrooms, number of bathrooms, lot size, and median household income). The image below depicts the results of this SQL join query:
 
 ![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/Merged_SQL_Table.png](images/Merged_SQL_Table.png)
 
