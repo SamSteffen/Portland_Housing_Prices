@@ -1,4 +1,4 @@
-,address,city,zipcode,latitude,longitude,bathrooms,bedrooms,lotsize,date_sold,price,zestimate,median_income
+,abbreviatedaddress,city,zipcode,latitude,longitude,bathrooms,bedrooms,lotsize,date_sold,price,zestimate,avg_income
 0,4008 SE Kelly St,Portland,97202,45.49956894,-122.62120060000001,1,2,4356,5/20/2021,535000,550300,39879.0
 1,6936 SE 28th Ave,Portland,97202,45.473526,-122.6341248,2,4,4791,8/16/2020,775000,874600,39879.0
 2,1515 SE Claybourne St,Portland,97202,45.47534943,-122.6506195,1,2,5227,5/4/2021,521000,539700,39879.0
