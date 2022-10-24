@@ -95,4 +95,4 @@ The datasets were merged using a left join to generate a new table that containe
 Because our target variable (housing prices) is a known and labeled entity in our dataset, it was determined to create a supervised machine learning model using python's scikitlearn libraries, to predict housing prices in several Portland zipcodes based on number of bedrooms, number of bathrooms, lot size, and median household income. 
 
 # Visualizing the Data
-A dashboard of visualizations for this dataset is available for viewing on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/HousingPricesinPortlandOR/PricevsDaysonZillow)
+A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/HousingPricesinPortlandOR/PricevsDaysonZillow)
