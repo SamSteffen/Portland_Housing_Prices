@@ -55,7 +55,7 @@ The data for this project was sourced from the following locations:
 
 After pairing the columns down from 348 to 13, we were yielded 21,168 rows of usable data that provided housing prices and Zillow estimates for homes in Portland and the surrounding area, between the dates of June 12, 2020 to July 15, 2021.
 
-![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/df.jpg](images/df.jpg)
+![df_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/df.jpg)
 
 The final features of this cleaned dataset include:    
     - Address (abbreviated)       
