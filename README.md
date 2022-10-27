@@ -55,7 +55,7 @@ The data for this project was sourced from the following locations:
 
 After pairing the columns down from 348 to 13, we were yielded 21,168 rows of usable data that provided housing prices and Zillow estimates for homes in Portland and the surrounding area, between the dates of June 12, 2020 to July 15, 2021.
 
-![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/df.jpg](images/df.jpg)
+![df_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/df.jpg)
 
 The final features of this cleaned dataset include:    
     - Address (abbreviated)       
@@ -74,22 +74,25 @@ The final features of this cleaned dataset include:
 
 Further exploration of this dataset showed that there were 62 unique zip codes present, with value counts ranging from 1 to 1001 per zipcode. To make sure our data was more evenly distributed from the outset, we filtered this data to return only data for zip codes that included more than 500 rows of data. This left us with 17 unique zip codes, and 11,854 rows of data.
 
-![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/cleaned_data_csv.jpg](images/cleaned_data_csv.jpg)
+![cleaned_data_csv](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/cleaned_data_csv.jpg)
 
 >Dataset 2: Combined Income, Census, and Zipcode Data
 - Our second dataset was compiled from zipatlas.com, census.gov and google.com/maps websites. These sources were combined to generate a dataset of median household income for zipcodes that were available in our first dataset.
 
-![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/median_income_by_zip.jpg](images/median_income_by_zip.jpg)
+![median_incomes_csv](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/median_income_by_zip.jpg)
 
 
 ## Transforming and Loading the Data into the Database (PostgreSQL)
 Once the raw data was cleaned, it was exported as a csv and loaded into PostgreSQL where it was joined together using the Portland zipcodes in the first dataset as the primary key to retrieve and append the median household income from the second. The image below depicts the entity relationship diagram (ERD) of the data:
 
-![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/Database_schema.png](images/Database_schema.png)
+![ERD_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Database_schema.png)
 
 The datasets were merged using a left join to generate a new table that contained the target variable (housing prices) and the independent variables (number of bedrooms, number of bathrooms, lot size, and median household income). The image below depicts the results of this SQL join query:
 
-![https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/Merged_SQL_Table.png](images/Merged_SQL_Table.png)
+![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_SQL_Table.png)
 
 ## Linear Regression (Supervised) Machine Learning Model
 Because our target variable (housing prices) is a known and labeled entity in our dataset, it was determined to create a supervised machine learning model using python's scikitlearn libraries, to predict housing prices in several Portland zipcodes based on number of bedrooms, number of bathrooms, lot size, and median household income. 
+
+# Visualizing the Data
+A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/HousingPricesinPortlandOR/PricevsDaysonZillow)
