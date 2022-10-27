@@ -79,7 +79,7 @@ Further exploration of this dataset showed that there were 62 unique zip codes p
 >Dataset 2: Combined Income, Census, and Zipcode Data
 - Our second dataset was compiled from zipatlas.com, census.gov and google.com/maps websites. These sources were combined to generate a dataset of median household income for zipcodes that were available in our first dataset.
 
-![median_incomes_csv](ihttps://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/median_income_by_zip.jpg)
+![median_incomes_csv](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/median_income_by_zip.jpg)
 
 
 ## Transforming and Loading the Data into the Database (PostgreSQL)
