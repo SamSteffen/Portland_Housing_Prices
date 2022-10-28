@@ -3,6 +3,8 @@ config.py
 PortlandMedianIncomebyZip.csv
 Portland_housing_w_rooms_reduced-zips.csv
 merged_table.csv
+mergedCSV_sql.csv
+mergedCSV_sql_FLOAT.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
