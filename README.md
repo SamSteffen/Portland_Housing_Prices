@@ -83,16 +83,18 @@ Further exploration of this dataset showed that there were 62 unique zip codes p
 
 
 ## Transforming and Loading the Data into the Database (PostgreSQL)
-Once the raw data was cleaned, it was exported as a csv and loaded into PostgreSQL where it was joined together using the Portland zipcodes in the first dataset as the primary key to retrieve and append the median household income from the second. The image below depicts the entity relationship diagram (ERD) of the data:
+Once the raw data was cleaned, it was cleaned using Python's pandas library (using Jupyter notebook) and loaded into PostgreSQL where it was joined together using the Portland zipcodes in the first dataset as the primary key to retrieve and append the median household income from the second. The image below depicts the entity relationship diagram (ERD) of the data:
 
 ![ERD_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Database_schema.png)
 
 The datasets were merged using a left join to generate a new table that contained the target variable (housing prices) and the independent variables (number of bedrooms, number of bathrooms, lot size, and median household income). The image below depicts the results of this SQL join query:
 
-![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_SQL_Table.png)      
+![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_Table.png)      
 
 ## Linear Regression (Supervised) Machine Learning Model
 Because our target variable (housing prices) is a known and labeled entity in our dataset, it was determined to create a supervised machine learning model using python's scikitlearn libraries, to predict housing prices in several Portland zipcodes based on number of bedrooms, number of bathrooms, lot size, and median household income. 
+
+This code is available in the above file, "MachineLearningDRAFT_Submission1.ipynb."
 
 # Visualizing the Data
 A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/HousingPricesinPortlandOR/PricevsDaysonZillow)
