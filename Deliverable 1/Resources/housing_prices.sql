@@ -51,3 +51,9 @@ ALTER TABLE merged_table
 	ALTER COLUMN zestimate TYPE NUMERIC (12,2);
 ALTER TABLE merged_table
 	ALTER COLUMN median_income TYPE NUMERIC (12,2);
+
+-- List existing users 
+SELECT rolname FROM pg_roles;
+
+-- List exisiting databases
+SELECT datname FROM pg_database;
