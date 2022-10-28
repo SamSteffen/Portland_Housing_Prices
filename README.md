@@ -89,7 +89,7 @@ Once the raw data was cleaned, it was exported as a csv and loaded into PostgreS
 
 The datasets were merged using a left join to generate a new table that contained the target variable (housing prices) and the independent variables (number of bedrooms, number of bathrooms, lot size, and median household income). The image below depicts the results of this SQL join query:
 
-![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_SQL_Table.png)
+![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_SQL_Table.png)      
 
 ## Linear Regression (Supervised) Machine Learning Model
 Because our target variable (housing prices) is a known and labeled entity in our dataset, it was determined to create a supervised machine learning model using python's scikitlearn libraries, to predict housing prices in several Portland zipcodes based on number of bedrooms, number of bathrooms, lot size, and median household income. 
