@@ -3,19 +3,19 @@ An analysis of housing prices in Portland, Oregon using Python's pandas library,
 
 ### The Team (and their roles)
 - [Robin Foster](https://github.com/rloufoster)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Linear regression machine learning co-architect; Scikitlearn library specialist; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Linear regression machine learning co-architect; Scikitlearn library specialist; co-presenter. ("Triangle" Role, responsible for creating a simple machine learning model, helping the team better understand where and how a machine learning model will fit into the project.)
 
 - [Laura Hemydin](https://github.com/L-Hmd)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Primary SQL author and PostgreSQL specialist; Database architect; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Primary SQL author and PostgreSQL specialist; Database architect; co-presenter. ("Circle" Role, in charge of the mockup database, using a SQL-based database, including an ERD of the database, documentation in this README pointing out how it is integrated into the database and how it works with the code)
 
 - [Kayla Howell](https://github.com/kbowling74)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Documentation author; Linear regression machine learning co-architect; Scikitlearn library specialist; visualization collaborator; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Documentation author; Linear regression machine learning co-architect; Scikitlearn library specialist; visualization collaborator; co-presenter. ("Triangle" Role, responsible for creating a simple machine learning model, helping the team better understand where and how a machine learning model will fit into the project.)
 
 - [Sam Steffen](https://github.com/SamSteffen)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Python enthusiast; GitHub repository manager; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Python enthusiast; GitHub repository manager; co-presenter. ("Square" Role, responsible for setting up the repository; this includes naming the repository and adding team members.)
 
 - [Marty Thompson](https://github.com/martyet1)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Tableau specialist; Primary dashboard architect; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Tableau specialist; Primary dashboard architect; co-presenter. ("X" Role, focusing on the technology of the project, considering: Which tools are the best fit for the project? What will be used for each section? How will the dashboard be built?, etc.)
 
 # Overview
 ## What We're Trying To Solve
@@ -83,7 +83,7 @@ Further exploration of this dataset showed that there were 62 unique zip codes p
 
 
 ## Transforming and Loading the Data into the Database (PostgreSQL)
-Once the raw data was cleaned, it was cleaned using Python's pandas library (using Jupyter notebook) and loaded into PostgreSQL where it was joined together using the Portland zipcodes in the first dataset as the primary key to retrieve and append the median household income from the second. The image below depicts the entity relationship diagram (ERD) of the data:
+Once the raw data was compiled, it was cleaned using Python's pandas library (using Jupyter notebook) and loaded into PostgreSQL where it was joined together using the Portland zipcodes in the first dataset as the primary key to retrieve and append the median household income from the second. The image below depicts the entity relationship diagram (ERD) of the data:
 
 ![ERD_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Database_schema.png)
 
