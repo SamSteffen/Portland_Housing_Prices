@@ -3,19 +3,19 @@ An analysis of housing prices in Portland, Oregon using Python's pandas library,
 
 ### The Team (and their roles)
 - [Robin Foster](https://github.com/rloufoster)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Linear regression machine learning co-architect; Scikitlearn library specialist; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Linear regression machine learning co-architect; Scikitlearn library specialist; co-presenter. ("Triangle" Role, responsible for creating a simple machine learning model, helping the team better understand where and how a machine learning model will fit into the project.)
 
 - [Laura Hemydin](https://github.com/L-Hmd)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Primary SQL author and PostgreSQL specialist; Database architect; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Primary SQL author and PostgreSQL specialist; Database architect; co-presenter. ("Circle" Role, in charge of the mockup database, using a SQL-based database, including an ERD of the database, documentation in this README pointing out how it is integrated into the database and how it works with the code)
 
 - [Kayla Howell](https://github.com/kbowling74)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Documentation author; Linear regression machine learning co-architect; Scikitlearn library specialist; visualization collaborator; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Documentation author; Linear regression machine learning co-architect; Scikitlearn library specialist; visualization collaborator; co-presenter. ("Triangle" Role, responsible for creating a simple machine learning model, helping the team better understand where and how a machine learning model will fit into the project.)
 
 - [Sam Steffen](https://github.com/SamSteffen)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Python enthusiast; GitHub repository manager; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Python enthusiast; GitHub repository manager; co-presenter. ("Square" Role, responsible for setting up the repository; this includes naming the repository and adding team members.)
 
 - [Marty Thompson](https://github.com/martyet1)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Tableau specialist; Primary dashboard architect; co-presenter.
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Tableau specialist; Primary dashboard architect; co-presenter. ("X" Role, focusing on the technology of the project, considering: Which tools are the best fit for the project? What will be used for each section? How will the dashboard be built?, etc.)
 
 # Overview
 ## What We're Trying To Solve
@@ -83,7 +83,7 @@ Further exploration of this dataset showed that there were 62 unique zip codes p
 
 
 ## Transforming and Loading the Data into the Database (PostgreSQL)
-Once the raw data was cleaned, it was cleaned using Python's pandas library (using Jupyter notebook) and loaded into PostgreSQL where it was joined together using the Portland zipcodes in the first dataset as the primary key to retrieve and append the median household income from the second. The image below depicts the entity relationship diagram (ERD) of the data:
+Once the raw data was compiled, it was cleaned using Python's pandas library (using Jupyter notebook) and loaded into PostgreSQL where it was joined together using the Portland zipcodes in the first dataset as the primary key to retrieve and append the median household income from the second. The image below depicts the entity relationship diagram (ERD) of the data:
 
 ![ERD_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Database_schema.png)
 
@@ -91,6 +91,33 @@ The datasets were merged using a left join to generate a new table that containe
 
 ![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_Table.png)      
 
+
+## Multivariate Linear Regression Machine Learning Model
+
+Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, the dependent variable, and the target in our model. While the variables we used to calculate the target, the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, median income), are the features in our model.  
+
+  * **Input Data** - List of Tables that were linked to via ProgresSQL
+  
+  * **Libraries and Dependencies**
+   - Sklern.preprocessing/StandardScaler
+   - Pandas
+   - numpy
+   - matplotlib.pyplot
+   - sklern.model_selection/train_test_split
+   - collections/counter
+   - sklearn/metrics
+   - sklearn.linear_model/LinearRegression
+   - sklearn.metrics/r2_score
+   - sklearn.ensemble/RandomForestRegressor
+   - sklearn.decomposition/PCA
+   - scipy.stats/spearmanr, pearsonr
+   - Seaborn
+
+### Exploratory Data Analysis 
+
+### Preprocessing
+
+=======
 ## Linear Regression (Supervised) Machine Learning Model
 Because our target variable (housing prices) is a known and labeled entity in our dataset, it was determined to create a supervised machine learning model using python's scikitlearn libraries, to predict housing prices in several Portland zipcodes based on number of bedrooms, number of bathrooms, lot size, and median household income. 
 
@@ -98,3 +125,6 @@ This code is available in the above file, "MachineLearningDRAFT_Submission1.ipyn
 
 # Visualizing the Data
 A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/HousingPricesinPortlandOR/PricevsDaysonZillow)
+
+# Presentation
+A GoogleSlides slide deck for the presentation of this project is available [here.](https://docs.google.com/presentation/d/1iFqnaFCaYSpY7JOiGFFUvDmQ8k29ZH2TL70giCf6V0w/edit?usp=sharing)
