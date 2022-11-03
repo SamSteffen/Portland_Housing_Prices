@@ -91,6 +91,33 @@ The datasets were merged using a left join to generate a new table that containe
 
 ![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_Table.png)      
 
+
+## Multivariate Linear Regression Machine Learning Model
+
+Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, the dependent variable, and the target in our model. While the variables we used to calculate the target, the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, median income), are the features in our model.  
+
+  * **Input Data** - List of Tables that were linked to via ProgresSQL
+  
+  * **Libraries and Dependencies**
+   - Sklern.preprocessing/StandardScaler
+   - Pandas
+   - numpy
+   - matplotlib.pyplot
+   - sklern.model_selection/train_test_split
+   - collections/counter
+   - sklearn/metrics
+   - sklearn.linear_model/LinearRegression
+   - sklearn.metrics/r2_score
+   - sklearn.ensemble/RandomForestRegressor
+   - sklearn.decomposition/PCA
+   - scipy.stats/spearmanr, pearsonr
+   - Seaborn
+
+### Exploratory Data Analysis 
+
+### Preprocessing
+
+=======
 ## Linear Regression (Supervised) Machine Learning Model
 Because our target variable (housing prices) is a known and labeled entity in our dataset, it was determined to create a supervised machine learning model using python's scikitlearn libraries, to predict housing prices in several Portland zipcodes based on number of bedrooms, number of bathrooms, lot size, and median household income. 
 
