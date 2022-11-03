@@ -113,9 +113,47 @@ Multivariate Regression is an extension of simple linear regression.  It is used
    - scipy.stats/spearmanr, pearsonr
    - Seaborn
 
-### Exploratory Data Analysis 
 
-### Preprocessing
+### Preprocessing Description
+
+After linking to the database and bringing in the merged table a dataframe was built that included all of the possible features. The following columns were immediately dropped because they provided no value to the analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
+
+![HouseDF_ColumnDrop]()
+
+After deciding on zipcode, bathrooms, bedroomms, price, ave_income and lotsize as our initial features, we ran descriptive statistics on the dataframe.
+
+![DescriptiveStats_Features1]()
+
+
+
+### Feature Engineering and Selection
+
+Decision making process
+
+### Model Building
+
+Description of how data was split into
+training and testing sets 
+Explanation of model choice, including
+limitations and benefits
+
+
+- Ran the model without scaling data, got the same exact r score.
+- Ran a model with encoded zip codes and no lat/long, and no scaled data and got r score of 46.
+- Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them, so that would be 1000's of columns. I'm not sure how to handle that.
+- Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle that
+
+- Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not sure exactly what those mean for the random forest models) but could be good?
+
+
+
+
+
+
+
+
+
+
 
 =======
 ## Linear Regression (Supervised) Machine Learning Model
