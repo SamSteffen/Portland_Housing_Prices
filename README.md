@@ -121,6 +121,7 @@ Multivariate Regression is an extension of simple linear regression.  It is used
 
 ### Exploratory Analysis and Feature Selection
 
+
 After linking to the database and bringing in the merged table, a dataframe was built that included all of the possible features. The following columns were immediately dropped because it was determined that they provided no value to this analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
 
 ![Feature Selection]()
@@ -137,9 +138,31 @@ After a preliminary investigation of the newly created HouseFT_DF, it was determ
 
 **Handling Outliers and Skewness**
 
+
+After linking to the database and bringing in the merged table, a dataframe was built that included all of the possible features. The following columns were immediately dropped because it was determined that they provided no value to this analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
+
+![Feature Selection]()
+
+After deciding on zipcode, bathrooms, bedroomms, price, date_sold, ave_income and lotsize as our initial features, we ran descriptive statistics on the dataframe.
+
+![DescriptiveStats_Features1 NEED TO UPDATE IMAGE WITH NEW FEATURE]()
+
+
+### Preprocessing
+
+A standard scaler was applied to the House_FT dataframe to normalize the data across the independent variable columns.  
+
+![ScaledData]()
+
+Since zip codes are categorical data rather than continuous, Dummies Encoding was applied.
+
+![ZipEncoding]()
+
+
 It was determined that both lotsize and price had skewed distributions. See below.  Dropped lotsize < 20000000 , Dropped price < 25000000    
 
 ![OutliersBox]()
+
 
 
 ![DroppedOutliers]()
@@ -154,6 +177,15 @@ It was determined that both lotsize and price had skewed distributions. See belo
 ![ZipEncoding]()
 
 
+### Problems and Adjustments to the Model
+
+
+- Ran the model without scaling data, got the same exact r score.
+- Ran a model with encoded zip codes and no lat/long, and no scaled data and got r score of 46.
+- Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them,   so that would be 1000's of columns. I'm not sure how to handle that.
+- Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle     that
+- Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not     sure exactly what those mean for the random forest models) but could be good?
+
 ### Model Building
 
 Split into target and features, split into test and train set using the standard 75/25 split
@@ -161,6 +193,7 @@ Split into target and features, split into test and train set using the standard
 ![ModelSplit]()
 
 Instantiate LinearRegression Model, run model and print results
+
 
 
 ![RunModel]()
