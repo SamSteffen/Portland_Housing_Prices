@@ -218,7 +218,7 @@ Compare robustness
 
 
 # Visualizing the Data
-A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/HousingPricesinPortlandOR/PricevsDaysonZillow)
+A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/Portland_Housing_Prices_Analysis/Averagepricebyzipcode2)
 
 # Presentation
 A GoogleSlides slide deck for the presentation of this project is available [here.](https://docs.google.com/presentation/d/1iFqnaFCaYSpY7JOiGFFUvDmQ8k29ZH2TL70giCf6V0w/edit?usp=sharing)
