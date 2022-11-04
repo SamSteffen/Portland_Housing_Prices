@@ -94,11 +94,16 @@ The datasets were merged using a left join to generate a new table that containe
 
 ## Multivariate Linear Regression Machine Learning Model
 
-Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, the dependent variable, and the target in our model. While the variables we used to calculate the target, the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, median income), are the features in our model.  
+Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The variables that we used to calculate the target are the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, median income) and the features in our model.  
 
-  * **Input Data** - List of Tables that were linked to via ProgresSQL
+  * **Input Data** - A connection string was used to access the SQL database (Portland_Housing_Prices) and import the merged table into        Jupyter Notebook.  See code below.
+  
+  ![ConnectionString]()
+  
+  
   
   * **Libraries and Dependencies**
+  
    - Sklern.preprocessing/StandardScaler
    - Pandas
    - numpy
@@ -114,52 +119,70 @@ Multivariate Regression is an extension of simple linear regression.  It is used
    - Seaborn
 
 
-### Preprocessing Description
+### Exploratory Analysis and Feature Selection
 
-After linking to the database and bringing in the merged table a dataframe was built that included all of the possible features. The following columns were immediately dropped because they provided no value to the analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
+After linking to the database and bringing in the merged table, a dataframe was built that included all of the possible features. The following columns were immediately dropped because it was determined that they provided no value to this analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
 
-![HouseDF_ColumnDrop]()
+![Feature Selection]()
 
-After deciding on zipcode, bathrooms, bedroomms, price, ave_income and lotsize as our initial features, we ran descriptive statistics on the dataframe.
+After deciding on zipcode, bathrooms, bedroomms, price, date_sold, ave_income and lotsize as our initial features, we ran descriptive statistics on the dataframe.
 
-![DescriptiveStats_Features1]()
+![DescriptiveStats_Features1 NEED TO UPDATE IMAGE WITH NEW FEATURE]()
+
+After a preliminary investigation of the newly created HouseFT_DF, it was determined that the bedrooms and bathrooms features both contained zeros for minimum values.  Since homes with zero bedrooms and/or bathrooms would probably not be valid data points we dropped the values records with zero values.
+
+![DropZeros]()
+
+### Preprocessing
+
+**Handling Outliers and Skewness**
+
+It was determined that both lotsize and price had skewed distributions. See below.  Dropped lotsize < 20000000 , Dropped price < 25000000    
+
+![OutliersBox]()
 
 
+![DroppedOutliers]()
 
-### Feature Engineering and Selection
 
-Decision making process
+**Normalization of the Data** -A standard scaler was applied to the House_FT dataframe to normalize the data across the independent variable columns.  
+
+![ScaledData]()
+
+**Encoding** -Since zip codes are categorical data rather than continuous, Dummies Encoding was applied.
+
+![ZipEncoding]()
+
 
 ### Model Building
 
-Description of how data was split into
-training and testing sets 
-Explanation of model choice, including
-limitations and benefits
+Split into target and features, split into test and train set using the standard 75/25 split
 
+![ModelSplit]()
+
+Instantiate LinearRegression Model, run model and print results
+
+
+![RunModel]()
+
+Check r2 and correlation heatmap
+
+
+![r2andheatmap]()
+
+Compare robustness
+
+![Robustness]()
+
+
+### Problems and Adjustments to the Model
 
 - Ran the model without scaling data, got the same exact r score.
 - Ran a model with encoded zip codes and no lat/long, and no scaled data and got r score of 46.
-- Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them, so that would be 1000's of columns. I'm not sure how to handle that.
-- Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle that
+- Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them,   so that would be 1000's of columns. I'm not sure how to handle that.
+- Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle     that
+- Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not     sure exactly what those mean for the random forest models) but could be good?
 
-- Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not sure exactly what those mean for the random forest models) but could be good?
-
-
-
-
-
-
-
-
-
-
-
-=======
-## Linear Regression (Supervised) Machine Learning Model
-Because our target variable (housing prices) is a known and labeled entity in our dataset, it was determined to create a supervised machine learning model using python's scikitlearn libraries, to predict housing prices in several Portland zipcodes based on number of bedrooms, number of bathrooms, lot size, and median household income. 
-
-This code is available in the above file, "MachineLearningDRAFT_Submission1.ipynb."
 
 # Visualizing the Data
 A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/HousingPricesinPortlandOR/PricevsDaysonZillow)
