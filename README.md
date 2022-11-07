@@ -93,18 +93,14 @@ The datasets were merged using a left join to generate a new table that containe
 
 
 ## Multivariate Linear Regression Machine Learning Model
-
-Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The variables that we used to calculate the target are the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, school_rating_0, school_rating_1, garage, school_rating_2, yearbuilt and median income) which are the features in our model.  
-
- * **The following libraries and dependencies were imported into Jupyter Notebook:**
 Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The variables that we used to calculate the target are the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, median income) and the features in our model.  
 
   * **Input Data** - A connection string was used to access the SQL database (Portland_Housing_Prices) and import the merged table into        Jupyter Notebook.  See code below.
   
   ![ConnectionString](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%202/Images/ConnectionString.png)
   
-  * **Libraries and Dependencies**
   
+  * **Libraries and Dependencies**
    - Sklern.preprocessing/StandardScaler
    - Pandas
    - numpy
@@ -119,72 +115,84 @@ Multivariate Regression is an extension of simple linear regression.  It is used
    - scipy.stats/spearmanr, pearsonr
    - Seaborn
 
-  * **Input Data** - A connection string was used to access the SQL database (Portland_Housing_Prices) and import the merged table into        Jupyter Notebook. The imported table was converted into a Python dataframe and defined as merged_table_df. See code below.
-  
-  ![ConnectionString]()
-  
- 
 ### Exploratory Analysis and Feature Selection
+After linking to the database and bringing in the merged table, a dataframe was built that included all of the possible features. The following columns were immediately dropped because it was determined that they provided no value to this analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
 
+![Feature Selection](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_FeatureSelection_ML.png)
 
-The merged_table_df consisted of 18 columns. The following columns were immediately dropped because it was determined that they provided no value to this analysis: abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
+After deciding on zipcode, bathrooms, bedroomms, price, date_sold, ave_income and lotsize as our initial features, we ran descriptive statistics on the dataframe.
 
-![Updated_Feature Selection]()
+![DescriptiveStats_Features1 NEED TO UPDATE IMAGE WITH NEW FEATURE](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_DescriptiveStats_ML.png)
 
-After deciding on zipcode, bathrooms, bedroomms, price, garage, school_rating_0, school rating_1, school_rating_2, date_sold, ave_income, year_built and lotsize as our features, we ran descriptive statistics on the new dataframe, House_FT_df. 
+After a preliminary investigation of the newly created HouseFT_DF, it was determined that the bedrooms and bathrooms features both contained zeros for minimum values.  Since homes with zero bedrooms and/or bathrooms would probably not be valid data points we dropped the values records with zero values.
 
-![Updated_DescriptiveStats]()
-
-After a preliminary investigation of the newly created HouseFT_DF, it was determined that the bedrooms, yearbuilt and bathrooms features all contained zeros for minimum values.  Since homes with zero bedrooms and/or bathrooms and zero for yearbuilt would likely not be valid data points, we dropped the records with zero values.
-
-![Updated_DropZeros]()
+![DropZeros](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_zerosdropped_ML.png)
 
 ### Preprocessing
 
 **Handling Outliers and Skewness**
-A box and whisker plot revealed that there was an outlier in the price column.  
+After linking to the database and bringing in the merged table, a dataframe was built that included all of the possible features. The following columns were immediately dropped because it was determined that they provided no value to this analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
 
-![BoxandWhis_PriceOutlier_ML]()
+![Feature Selection](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_FeatureSelection_ML.png)
 
-The price outlier was dropped from the distribution.
+After deciding on zipcode, bathrooms, bedroomms, price, date_sold, ave_income and lotsize as our initial features, we ran descriptive statistics on the dataframe.
 
-![DropPriceOutlier_ML]()
+![DescriptiveStats_Features1 NEED TO UPDATE IMAGE WITH NEW FEATURE](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_DescriptiveStats_ML.png)
 
 
-**Handling Zipcodes**
-Since we determined that zipcodes shoule be classified as categorical, rather than continuous data. We applied Dummies to encode the zipcode data.
+### Preprocessing
+A standard scaler was applied to the House_FT dataframe to normalize the data across the independent variable columns.  
 
-![DummiesEncoding_ML]()
+![ScaledData](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/StandardScaler_ML.png)
 
-In order for the model to accept the garage data, True/False needed to be converted to integer values.
+Since zip codes are categorical data rather than continuous, Dummies Encoding was applied.
 
-![Garagetypeconvert_ML]()
+![ZipEncoding](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/DummiesEncoding_ML.png)
 
-**Normalization of Data**
-A StandardScaler was applied to the House_FT dataframe to normalize the data across all variables.
 
-![StandardScaler_ML]()
+It was determined that both lotsize and price had skewed distributions. See below.  Dropped lotsize < 20000000 , Dropped price < 25000000    
+
+![OutliersBox](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/BoxandWhis_PriceOutlier_ML.png)
+
+
+![DroppedOutliers](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/DropPriceOutlier_ML.png)
+
+
+**Normalization of the Data** - A standard scaler was applied to the House_FT dataframe to normalize the data across the independent variable columns.  
+
+![ScaledData](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/StandardScaler_ML.png)
+
+**Encoding** -Since zip codes are categorical data rather than continuous, Dummies Encoding was applied.
+
+![ZipEncoding](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/DummiesEncoding_ML.png)
+
+
+### Problems and Adjustments to the Model
+- Ran the model without scaling data, got the same exact r score.
+- Ran a model with encoded zip codes and no lat/long, and no scaled data and got r score of 46.
+- Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them,   so that would be 1000's of columns. I'm not sure how to handle that.
+- Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle     that
+- Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not     sure exactly what those mean for the random forest models) but could be good?
 
 ### Model Building
-- Run and evaluate linear regression model
+Split into target and features, split into test and train set using the standard 75/25 split
 
-The data was split into target(y) and features(x).
+![ModelSplit](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_ModelSplit.png)
 
-![Updated_ModelSplit]()
+Instantiate LinearRegression Model, run model and print results
 
-Split the data into test and train sets using the standard (75/25) split. Then instantiate the model.
+![RunModel](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/runmodel_printresults_ML.png)
 
-![testtrainsplit_instantiate_ML]()
+Check r2 and correlation heatmap
 
-Run the model and print results.
+![r2andheatmap](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/images/r2andHeatmap.png)
 
-![runmodel_printresults_ML]()
+Compare robustness
 
-Compare robustness.
+![Robustness](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_Robustness_ML.png)
 
-![Updated_Robustness]()
 
-### Problems and Adjustments to the Model (talk to Kayla about insights here)
+### Problems and Adjustments to the Model
 - Ran the model without scaling data, got the same exact r score.
 - Ran a model with encoded zip codes and no lat/long, and no scaled data and got r score of 46.
 - Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them,   so that would be 1000's of columns. I'm not sure how to handle that.
