@@ -97,6 +97,13 @@ The datasets were merged using a left join to generate a new table that containe
 Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The variables that we used to calculate the target are the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, school_rating_0, school_rating_1, garage, school_rating_2, yearbuilt and median income) which are the features in our model.  
 
  * **The following libraries and dependencies were imported into Jupyter Notebook:**
+Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The variables that we used to calculate the target are the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, median income) and the features in our model.  
+
+  * **Input Data** - A connection string was used to access the SQL database (Portland_Housing_Prices) and import the merged table into        Jupyter Notebook.  See code below.
+  
+  ![ConnectionString](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%202/Images/ConnectionString.png)
+  
+  * **Libraries and Dependencies**
   
    - Sklern.preprocessing/StandardScaler
    - Pandas
@@ -119,6 +126,7 @@ Multivariate Regression is an extension of simple linear regression.  It is used
  
 ### Exploratory Analysis and Feature Selection
 
+
 The merged_table_df consisted of 18 columns. The following columns were immediately dropped because it was determined that they provided no value to this analysis: abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
 
 ![Updated_Feature Selection]()
@@ -131,11 +139,9 @@ After a preliminary investigation of the newly created HouseFT_DF, it was determ
 
 ![Updated_DropZeros]()
 
-
 ### Preprocessing
 
 **Handling Outliers and Skewness**
-
 A box and whisker plot revealed that there was an outlier in the price column.  
 
 ![BoxandWhis_PriceOutlier_ML]()
@@ -146,25 +152,20 @@ The price outlier was dropped from the distribution.
 
 
 **Handling Zipcodes**
-
 Since we determined that zipcodes shoule be classified as categorical, rather than continuous data. We applied Dummies to encode the zipcode data.
 
 ![DummiesEncoding_ML]()
-
 
 In order for the model to accept the garage data, True/False needed to be converted to integer values.
 
 ![Garagetypeconvert_ML]()
 
 **Normalization of Data**
-
 A StandardScaler was applied to the House_FT dataframe to normalize the data across all variables.
 
 ![StandardScaler_ML]()
 
-
 ### Model Building
-
 - Run and evaluate linear regression model
 
 The data was split into target(y) and features(x).
@@ -183,9 +184,7 @@ Compare robustness.
 
 ![Updated_Robustness]()
 
-
 ### Problems and Adjustments to the Model (talk to Kayla about insights here)
-
 - Ran the model without scaling data, got the same exact r score.
 - Ran a model with encoded zip codes and no lat/long, and no scaled data and got r score of 46.
 - Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them,   so that would be 1000's of columns. I'm not sure how to handle that.
@@ -194,7 +193,6 @@ Compare robustness.
 
 
 # Visualizing the Data
-
 A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/Portland_Housing_Prices_Analysis/Averagepricebyzipcode2)
 
 # Presentation
