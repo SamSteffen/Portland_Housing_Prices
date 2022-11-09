@@ -61,16 +61,16 @@ The final features of this cleaned dataset include:
     - City    
     - Zipcode    
     - Latitude coordinates    
-    - Longitude coordinates
-    - Number of bathrooms
-    - Number of bedrooms
-    - Lot size
-    - Garage (True or False indicates whether a garage is present or not)
-    - School_rating_0* (Elementary school rankings, 1-10 scale)
-    - School_rating_1* (Middle school rankings, 1-10 scale)
-    - School_rating_2* (High school rankings, 1-10 scale)
-    - Year Built
-    - Days on Zillow    
+    - Longitude coordinates   
+    - Number of bathrooms   
+    - Number of bedrooms   
+    - Lot size   
+    - Garage (True or False indicates whether a garage is present or not)   
+    - School_rating_0* (Elementary school rankings, 1-10 scale)   
+    - School_rating_1* (Middle school rankings, 1-10 scale)   
+    - School_rating_2* (High school rankings, 1-10 scale)   
+    - Year Built   
+    - Days on Zillow   
     - Date Sold    
     - Price (what the house actually sold for, US dollar amount)    
     - Zestimate (what Zillow predicted the house would sell for, US dollar amount)
@@ -96,9 +96,9 @@ Once the raw data was compiled, it was cleaned using Python's pandas library (in
 
 ![ERD_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%203/images/updated_database_schema.png)
 
-The datasets were merged using a left join to generate a new table that contained the target variable (housing prices) and the independent variables (number of bedrooms, number of bathrooms, lot size, garage, year built, school rankings and median household income). The image below depicts the results of this SQL join query:
+The datasets were merged using a left join to generate a new table that contained the target variable (housing prices) and the independent variables (number of bedrooms, number of bathrooms, lot size, garage, year built, school rankings and median household income). The image below depicts this SQL join query:
 
-![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%201/images/Merged_Table.png)      
+![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%203/images/updated_sql_leftjoin.png)      
 
 
 ## Multivariate Linear Regression Machine Learning Model
@@ -188,7 +188,6 @@ Check r2 and correlation heatmap.
 Compare robustness.
 
 ![Robustness](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_Robustness_ML.png)
-
 
 ### Problems and Adjustments to the Model
 - Ran the model without scaling data, got the same exact r score.
