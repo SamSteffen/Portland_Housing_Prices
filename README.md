@@ -94,10 +94,7 @@ The datasets were merged using a left join to generate a new table that containe
 
 ## Multivariate Linear Regression Machine Learning Model
 
-Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The variables that we used to calculate the target are the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, school_rating_0, school_rating_1, garage, school_rating_2, yearbuilt and median income) which are the features in our model.  
-
- * **The following libraries and dependencies were imported into Jupyter Notebook:**
-Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The variables that we used to calculate the target are the independent variables (# of bedrooms, # of bathrooms, zipcode, lotsize, median income) and the features in our model.  
+Multivariate Regression is an extension of simple linear regression.  It is used when we want to predict the value of a variable based on the value of two or more different variables.  The variable we want to predict is housing price, which is the dependent variable and the target in our model. The independent variables that we used to calculate the target are features that we predict will influence house prices in the Portland, OR market, and utimately can be transferred to other markets.
 
   * **Input Data** - A connection string was used to access the SQL database (Portland_Housing_Prices) and import the merged table into        Jupyter Notebook.  See code below.
   
@@ -119,23 +116,19 @@ Multivariate Regression is an extension of simple linear regression.  It is used
    - scipy.stats/spearmanr, pearsonr
    - Seaborn
 
-  * **Input Data** - A connection string was used to access the SQL database (Portland_Housing_Prices) and import the merged table into        Jupyter Notebook. The imported table was converted into a Python dataframe and defined as merged_table_df. See code below.
-  
-  ![ConnectionString]()
-  
- 
+   
 ### Exploratory Analysis and Feature Selection
 
 
-The merged_table_df consisted of 18 columns. The following columns were immediately dropped because it was determined that they provided no value to this analysis: abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
+**Drop Columns** - The merged_table_df consisted of 18 columns. The following columns were immediately dropped because it was determined that they provided no value to our model: abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate.
 
 ![Updated_Feature Selection]()
 
-After deciding on zipcode, bathrooms, bedroomms, price, garage, school_rating_0, school rating_1, school_rating_2, date_sold, ave_income, year_built and lotsize as our features, we ran descriptive statistics on the new dataframe, House_FT_df. 
+**Feature Selection** - After deciding upon the features: zipcode, # of bathrooms, # of bedroomms, garage (T/F), school_rating_0, school rating_1, school_rating_2, date_sold, ave_income, year_built and lotsize, we ran descriptive statistics on the new dataframe, House_FT_df. 
 
 ![Updated_DescriptiveStats]()
 
-After a preliminary investigation of the newly created HouseFT_DF, it was determined that the bedrooms, yearbuilt and bathrooms features all contained zeros for minimum values.  Since homes with zero bedrooms and/or bathrooms and zero for yearbuilt would likely not be valid data points, we dropped the records with zero values.
+**Drop Records with Zero Values** - After a preliminary investigation of the newly created HouseFT_DF, it was determined that the bedrooms, yearbuilt and bathrooms features all contained zeros for minimum values.  Since homes with zero bedrooms and/or bathrooms and zeros for yearbuilt would likely not be valid data points, we dropped the records with zero values.
 
 ![Updated_DropZeros]()
 
@@ -190,6 +183,8 @@ Compare robustness.
 - Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them,   so that would be 1000's of columns. I'm not sure how to handle that.
 - Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle     that
 - Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not     sure exactly what those mean for the random forest models) but could be good?
+
+### Results
 
 
 # Visualizing the Data
