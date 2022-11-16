@@ -173,9 +173,9 @@ Since zip codes are categorical data rather than continuous, Dummies Encoding wa
 ## Problems and Adjustments to the Model
 - Ran the model without scaling data, got the same exact r score.
 - Ran a model with encoded zip codes and no lat/long, and no scaled data and got an r score of 46.
-- Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them, so that would be 1000's of columns. I'm not sure how to handle that.
-- Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle that.
-- Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not sure exactly what those mean for the random forest models) but could be good?
+- Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them, so that would be thousands of columns.
+- Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the model's performance is low.
+- Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and Pearson correlation of .75.
 
 ## Model Building
 Split into target and features, split into test and train set using the standard 75/25 split.
