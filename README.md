@@ -6,7 +6,7 @@ An analysis of housing prices in Portland, Oregon using Python's pandas library,
     >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Linear regression machine learning co-architect; Scikitlearn library specialist; co-presenter. ("Triangle" Role, responsible for creating a simple machine learning model, helping the team better understand where and how a machine learning model will fit into the project.)
 
 - [Laura Hemydin](https://github.com/L-Hmd)
-    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Primary SQL author and PostgreSQL specialist; Database architect; co-presenter. ("Circle" Role, in charge of the mockup database, using a SQL-based database, including an ERD of the database, documentation in this README pointing out how it is integrated into the database and how it works with the code)
+    >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Primary SQL author and PostgreSQL specialist; Database architect; Tableau specialist; dashboard co-architect; co-presenter. ("Circle" Role, in charge of the mockup database, using a SQL-based database, including an ERD of the database, documentation in this README pointing out how it is integrated into the database and how it works with the code)
 
 - [Kayla Howell](https://github.com/kbowling74)
     >**Roles:** Data recruiter, cleaner; Exploratory data analyst; Documentation author; Linear regression machine learning co-architect; Scikitlearn library specialist; visualization collaborator; co-presenter. ("Triangle" Role, responsible for creating a simple machine learning model, helping the team better understand where and how a machine learning model will fit into the project.)
