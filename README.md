@@ -100,7 +100,6 @@ The datasets were merged using a left join to generate a new table that containe
 
 ![SQL_table_image](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%203/images/updated_sql_leftjoin.png)      
 
-
 ## Multivariate Linear Regression Machine Learning Model
 
 Multivariate Regression is an extension of simple linear regression. It is used when we want to predict the value of a variable based on the value of two or more different variables. The variable we want to predict is housing price, which is the dependent variable and the target in our model. The independent variables that we used to calculate the target are features that we predict will influence house prices in the Portland, OR market, and utimately can be transferred to other markets.
@@ -109,7 +108,6 @@ Multivariate Regression is an extension of simple linear regression. It is used 
   * **Input Data** - A connection string was used to access the SQL database (Portland_Housing_Prices) and import the merged table into Jupyter Notebook. See code below.
   
   ![ConnectionString](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Deliverable%202/Images/ConnectionString.png)
-  
   
   * **Libraries and Dependencies**
    - Sklern.preprocessing/StandardScaler
@@ -126,7 +124,7 @@ Multivariate Regression is an extension of simple linear regression. It is used 
    - scipy.stats/spearmanr, pearsonr
    - Seaborn
 
-### Exploratory Analysis and Feature Selection
+## Exploratory Analysis and Feature Selection
 After linking to the database and bringing in the merged table, a dataframe was built that included all of the possible features. The following columns were immediately dropped because it was determined that they provided no value to this analysis: unnamed:0, abbreviatedaddress, city, latitude, longtitude, date_sold, zestimate. 
 
 ![Feature Selection](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_FeatureSelection_ML.png)
@@ -146,7 +144,7 @@ After a preliminary investigation of the newly created HouseFT_DF, it was determ
 **Drop Records with Zero Values** - After a preliminary investigation of the newly created HouseFT_DF, it was determined that the bedrooms, yearbuilt and bathrooms features all contained 
 zeros for minimum values.  Since homes with zero bedrooms and/or bathrooms and zeros for yearbuilt would likely not be valid data points, we dropped the records with zero values.
 
-### Preprocessing
+## Preprocessing
 **Handling Outliers and Skewness**
 A standard scaler was applied to the House_FT dataframe to normalize the data across the independent variable columns.  
 
@@ -172,14 +170,14 @@ Since zip codes are categorical data rather than continuous, Dummies Encoding wa
 
 ![ZipEncoding](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/DummiesEncoding_ML.png)
 
-### Problems and Adjustments to the Model
+## Problems and Adjustments to the Model
 - Ran the model without scaling data, got the same exact r score.
-- Ran a model with encoded zip codes and no lat/long, and no scaled data and got r score of 46.
+- Ran a model with encoded zip codes and no lat/long, and no scaled data and got an r score of 46.
 - Using the get dummies or hot one encoding isn't going to work for lat/long because we'll get a column for individual occurrences of them, so that would be 1000's of columns. I'm not sure how to handle that.
 - Our data for price, bed, bath, and lot size is heavily skewed so this could be a reason the models so low, also not sure how to handle that.
 - Created a random forest regression model with PCA, got a .561 r score, Spearman correlation of .75, and pearson correlation of .75 (not sure exactly what those mean for the random forest models) but could be good?
 
-### Model Building
+## Model Building
 Split into target and features, split into test and train set using the standard 75/25 split.
 
 ![ModelSplit](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_ModelSplit.png)
@@ -196,7 +194,32 @@ Compare robustness.
 
 ![Robustness](https://github.com/SamSteffen/Portland_Housing_Prices/blob/main/Robin_Updated_Images/Updated_Robustness_ML.png)
 
-### Results
+# Results
+- From the 3 models tested the Linear Regression model from the sklearn module resulted in the highest r2 value.   
+- 4,401 records were tested from 7 different zip codes in Portland, OR.   
+- 9 individual features were selected for testing:   
+   - Number of bathrooms   
+   - Number of bedrooms   
+   - Lot size   
+   - Garage   
+   - Year Built   
+   - Elementary School Rating   
+   - Middle School Rating   
+   - High School Rating   
+   - Median Income (by zip code)   
+> The top 3 features that impacted the sale price of homes were:   
+> - Number of bedrooms (.56 r)
+> - Number of bathrooms (.48 r)
+> - Elementary school rating (.36 r)
+
+> The features with least correlation to the sale price of homes were:
+> - ZIP code 97217
+> - ZIP code 97222
+> - ZIP code 97223
+
+> The presence of a garage was the fourth-lowest ranking feature in home-price correlation. This is meaningful for individuals who may be thinking of adding a garage to their house or completing an enclosure to increase the sale price of their home; the return on investment may not be worth the trouble.
+
+> The model worked, but demonstrated an R2 score of .511, indicating a moderate performance as far as the ability to accurately predict the price of a home in Portland, OR.
 
 # Visualizing the Data
 A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/PortlandHousingAnalysis4/InteractivateMapSample?publish=yes)
