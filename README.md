@@ -21,13 +21,18 @@ An analysis of housing prices in Portland, Oregon using Python's pandas library,
 ## What We're Trying To Solve
 Zillow's 'zestimator' is a well-known and widely-used machine learning algorithm that predicts house price for site-users based on a variety of features. This project is an attempt to create a home price estimator similar to the one used by Zillow, to predict housing prices based on regional features specific to geographical zip code. Below we have documented the creation of a multivariate linear regression machine learning model that draws on known sale prices of homes in Portland, OR to predict future sale prices based on number of bedrooms, number of bathrooms, lot size, whether the house has a garage, the year the house was built, school ranking and median income for each zip code.
 
-## Tools
+## Tools and Communication Protocols
 To analyze and prepare our data for our machine learning model, we plan to use the following tools:
 - **Excel** - Most of our data will be downloaded from an online source in csv format, from which it will be imported to a jupyter notebook for initial cleaning
 - **Python** - Using Python's pandas library, we will create dataframes from our dataset and prepare it for importing to our SQL database.
 - **PostgreSQL** - We will use SQL to merge multiple datasets into a single database.
 - **Tableau** - We will use Tableau Public to create visualizations of cleaned, merged data, taken from our PostgreSQL database. 
-- **GitHub** - GitHub will host our repository.
+- **GitHub** - GitHub will host our repository.   
+
+To effectively communicate as a team, the following tools will be utilized:   
+- **Slack** - This is a messaging platform that will allow our team to communicate quickly and effectively about tasks.
+- **Zoom** - This is a virtual videoconferencing software that will help us conduct group meetings.
+- **Email** - Email will be used to share data files and additional side-bar messages, as well as collaborate on our GoogleSlides.
 
 ## Strategy and Metrics
 The goals of this analysis include:
