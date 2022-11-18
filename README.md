@@ -227,7 +227,7 @@ Compare robustness.
 > The model worked, but demonstrated an R2 score of .511, indicating a moderate performance as far as the ability to accurately predict the price of a home in Portland, OR.
 
 # Visualizing the Data
-A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/PortlandHousingAnalysis4/DashboardP3)
+A dashboard for this dataset is available on [Tableau Public.](https://public.tableau.com/app/profile/marty.thompson/viz/PortlandHousingAnalysis4/StoryP1)
 
 # Presentation
 A GoogleSlides slide deck for the presentation of this project is available [here.](https://docs.google.com/presentation/d/19Dhehv9FnKZLOEwFK7GtMPgS6XQ2fYS1-U_3VNVEOuk/edit?usp=sharing)
